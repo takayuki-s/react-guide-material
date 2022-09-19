@@ -1,13 +1,14 @@
-/* POINT 式と文
-式：何らかの値を返すもの（変数に代入できるもの）
-文：変数宣言、for文、if文、switch文やセミコロンで区切るもの。
-*/
+/* POINT Props の受け取り方
+親コンポーネントで属性値のように記述した各値は、１つのオブジェクトとして子コンポーネントで受け取ることができる。
+ */
+
 
 import "./Child.css";
 
-const Child = () => {
+const Child = ({ color: c = 'green', num, fn, bool, obj }) => {
+
   return (
-    <div className="component">
+    <div className={`component ${c}`}>
       <h3>Hello Component</h3>
     </div>
   );
