@@ -20,11 +20,12 @@ const Example = () => {
     setFruits(newFruits)
 
     let sumVal = 0
-    newFruits.forEach(fruit => {
-      if (fruit.checked) {
-        sumVal += fruit.value
-      }
-    })
+    // newFruits.forEach(fruit => {
+    //   if (fruit.checked) {
+    //     sumVal += fruit.value
+    //   }
+    // })
+    newFruits.filter((fruit) =>fruit.checked).forEach((fruit) => sumVal = sumVal + fruit.value)
     setSum(sumVal)
   }
 
