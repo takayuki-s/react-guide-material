@@ -1,3 +1,4 @@
+import { useState } from "react";
 import Form from "./Form";
 import List from "./List";
 
@@ -17,9 +18,19 @@ const Todo = () => {
     },
   ];
 
+  const [todos, setTodos] = useState(todosList)
+
+  const deleteTodo = (id) => {
+    const newTodos = todos.filter((todo) => {
+      return todo.id !== id
+    })
+
+    setTodos(newTodos)
+  }
+
   return (
     <>
-      <List />
+      <List todos={todos} deleteTodo={deleteTodo}/>
       <Form />
     </>
   )
