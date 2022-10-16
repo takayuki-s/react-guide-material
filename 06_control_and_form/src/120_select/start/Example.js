@@ -7,9 +7,10 @@ const Example = () => {
   return (
     <>
       <select value={selected} onChange={(e) => setSelected(e.target.value)}>
-        <option value="Apple">Apple</option>
+        {OPTIONS.map(opt => <option key={opt} value={opt}>{opt}</option>)}
+        {/* <option value="Apple">Apple</option>
         <option value="Banana">Banana</option>
-        <option value="Cherry">Cherry</option>
+        <option value="Cherry">Cherry</option> */}
       </select>
       <div>選択された果物：{selected}</div>
     </>
