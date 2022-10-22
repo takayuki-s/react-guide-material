@@ -1,5 +1,6 @@
 import { useState } from "react";
 
+import SubButton from "./components/SubButton";
 import "./Example.css"
 
 const Example = () => {
@@ -12,6 +13,7 @@ const Example = () => {
       <button className={isSelected ? "btn selected" : "btn"} onClick={clickHandler}>
         ボタン
       </button>
+      <SubButton />
       <div style={{ textAlign: "center" }}>
         {isSelected && "クリックされました。"}
       </div>
