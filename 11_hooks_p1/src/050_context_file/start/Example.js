@@ -1,5 +1,9 @@
-import { useState } from "react";
+import { createContext, useState } from "react";
+import Header from "./components/Header";
+import Main from "./components/Main";
 import "./Example.css";
+
+export const ThemeContext = createContext()
 
 const Example = () => {
   const [theme, setTheme] = useState('light')
@@ -9,14 +13,10 @@ const Example = () => {
   const THEMES = ['light', 'dark', 'red'];
 
   return (
-    <>
-      <header className={`content-${theme}`}>
-        
-      </header>
-      <main className={`content-${theme}`}>
-        <h1>テーマの切り替え</h1>
-      </main>
-    </>
+    <ThemeContext.Provider value={[theme, setTheme]}>
+      <Header />
+      <Main />
+    </ThemeContext.Provider>
   );
 };
 
