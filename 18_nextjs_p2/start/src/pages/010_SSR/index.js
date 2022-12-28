@@ -17,3 +17,17 @@ export default function SSR() {
         </>
     )
 }
+
+export async function getServerSideProps(context) {
+
+    const { cookie } = context.req.headers;
+    console.log('cookie', cookie);
+    console.log('getServerSideProps is executed')
+    return {
+        redirect: {
+            destination: '/',
+            permanent: false
+        },
+        props: { message: 'From Server Side Props' }
+    }
+}
