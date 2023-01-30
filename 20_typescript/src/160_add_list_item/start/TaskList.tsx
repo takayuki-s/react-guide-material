@@ -1,4 +1,3 @@
-// 型情報のみのインポートには import type 型 という書き方をすることもできる（import type { Todo } from "./Example"）
 import { Todo } from "./Example";
 
 type TaskListProps = {
